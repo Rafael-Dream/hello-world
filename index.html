@@ -4,8 +4,38 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hello</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <h1>World!</h1>
+  <h5>ref:<br>
+    <a href="https://darkcode1.blogspot.com/2019/07/animated-login-form-using-html-css.html" target="blank">darkcode: Animated Login Form Using HTML & CSS & JQurey</a>
+  </h5>
+
+  <div id="panLogin">
+    <h1>World!</h1>
+    <form>
+      <div class="tbox">
+        <input type="text">
+        <span data-placeholder="Account"></span>
+      </div>
+      <div class="tbox">
+        <input type="password">
+        <span data-placeholder="Password"></span>
+      </div>
+
+      <input type="submit" class="btn" value="Login">
+    </form>
+  </div>
+  <script type="text/javascript">
+    $('.tbox input')
+      .on('focus', function(){
+        $(this).addClass('focus');
+      })
+      .on('blur', function(){
+        if ($(this).val().trim() === '')
+          $(this).removeClass('focus');
+      })
+  </script>
 </body>
 </html>
